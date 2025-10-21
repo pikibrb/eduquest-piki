@@ -29,7 +29,6 @@ class QuizController extends Controller
         $quiz = Quiz::with('questions')->findOrFail($id);
         $userId = Auth::id();
 
-        // Jika sudah mengerjakan -> redirect ke result
         $existing = Answer::where('user_id', $userId)
             ->where('quiz_id', $quiz->id)
             ->first();
@@ -47,7 +46,6 @@ class QuizController extends Controller
         $quiz = Quiz::with('questions')->findOrFail($id);
         $user = Auth::user();
 
-        // cek ulang — bila sudah ada record, jangan terima submission lagi
         $existing = Answer::where('user_id', $user->id)
             ->where('quiz_id', $quiz->id)
             ->first();
@@ -61,7 +59,6 @@ class QuizController extends Controller
         $correct = 0;
         $total = $quiz->questions->count();
 
-        // hapus jawaban lama (sebagai safety — biasanya tidak ada karena cek di atas)
         UserAnswer::where('user_id', $user->id)->where('quiz_id', $quiz->id)->delete();
 
         foreach ($quiz->questions as $question) {
@@ -81,7 +78,6 @@ class QuizController extends Controller
 
         $score = $total > 0 ? round(($correct / $total) * 100) : 0;
 
-        // simpan nilai akhir (create, bukan update) — karena kita blok ulangan
         Answer::create([
             'user_id' => $user->id,
             'quiz_id' => $quiz->id,

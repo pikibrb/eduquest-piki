@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-8">
     <h2 class="text-2xl font-bold text-indigo-700 mb-6">
-        Daftar Siswa - {{ $quiz->title }}
+        Daftar Siswa Kuis: {{ $quiz->title }}
     </h2>
 
     <table class="min-w-full text-left border border-gray-200 rounded-lg overflow-hidden">

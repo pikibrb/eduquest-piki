@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto mt-10 text-center">
-        <h1 class="text-4xl font-bold mb-4 text-indigo-600">Selamat Datang di EduQuest 🎓</h1>
+        <h1 class="text-4xl font-bold mb-4 text-indigo-600">Selamat Datang di EduQuest!!!</h1>
         <p class="text-gray-600 mb-8">Website kuis pembelajaran interaktif.</p>
 
         @if(Auth::user()->role === 'admin')

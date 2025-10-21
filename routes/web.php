@@ -7,7 +7,7 @@ use App\Http\Controllers\Student\LeaderboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('auth.login'));
+Route::get('/', fn() => view('welcome'));
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,6 +37,7 @@ Route::middleware('student')->prefix('student')->name('student.')->group(functio
     Route::post('quizzes/{quiz}/submit', [StudentQuizController::class, 'submit'])->name('quizzes.submit');
     Route::get('result/{quiz}', [StudentQuizController::class, 'result'])->name('quizzes.result');
 });
+//lb global
 Route::middleware(['auth'])->group(function () {
     Route::get('/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
 });
