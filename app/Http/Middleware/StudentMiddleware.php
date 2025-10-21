@@ -16,9 +16,9 @@ class StudentMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || Auth::user()->role !== 'siswa'){
-        abort(403, 'Akses ditolak.');
-    }
+        if (!Auth::check() || Auth::user()->role !== 'siswa') {
+            abort(403, 'Akses ditolak.');
+        }
         return $next($request);
     }
 }

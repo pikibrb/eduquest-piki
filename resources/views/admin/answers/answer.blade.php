@@ -13,15 +13,15 @@
         </thead>
         <tbody>
             @foreach ($students as $student)
-                <tr>
-                    <td>{{ $student['user']->name }}</td>
-                    <td>{{ $student['score'] }}%</td>
-                    <td>
-                        <a href="{{ route('admin.answers.show', [$quiz->id, $student['user']->id]) }}" class="btn btn-info btn-sm">
-                            Lihat Jawaban
-                        </a>
-                    </td>
-                </tr>
+            <tr>
+                <td>{{ $student['user']->name }}</td>
+                <td>{{ $student['score'] }}%</td>
+                <td>
+                    <a href="{{ route('admin.answers.show', [$quiz->id, $student['user']->id]) }}" class="btn btn-info btn-sm">
+                        Lihat Jawaban
+                    </a>
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>

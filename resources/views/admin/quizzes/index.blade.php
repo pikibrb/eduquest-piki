@@ -32,7 +32,7 @@
 
                             <a href="{{ route('admin.answers.index', $quiz->id) }}"
                                 class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg text-sm">
-                                    Hasil Kuis
+                                Hasil Kuis
                             </a>
                             <a href="{{ route('admin.quizzes.show', $quiz->id) }}"
                                 class="text-blue-600 hover:underline">Lihat</a>
